@@ -1,0 +1,34 @@
+@startuml
+annotation java.lang.Override
+class Admin
+class Controller
+class Database
+class Display
+class Login
+class Main
+class User{
+-v:Display
+
+}
+class java.awt.event.ActionEvent
+class java.io.File
+class java.util.ArrayList
+class javax.swing.JButton
+class javax.swing.JFrame
+class javax.swing.JLabel
+class javax.swing.JTextField
+interface java.awt.event.ActionListener
+Admin --|> User
+Admin ..> java.io.File
+Database ..> java.io.File
+Database ..> java.util.ArrayList
+Display ..> java.awt.event.ActionEvent
+Display ..> java.io.File
+Login ..> java.lang.Override
+Login ..> java.awt.event.ActionEvent
+Login ..> javax.swing.JButton
+Login ..> javax.swing.JFrame
+Login ..> javax.swing.JLabel
+Login ..> javax.swing.JTextField
+Login --|> java.awt.event.ActionListener
+@enduml
