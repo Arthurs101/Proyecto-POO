@@ -1,27 +1,29 @@
+/*
+Es el Usuario común, solo puede consultar
+*/
+
 public class User {
+    
+    private String name;//nombre
 
-    protected String name;
+    private String ID;//id personal ("Contraseña")
 
-    protected String ID;
+    private boolean type;//su tipo (usuario o administrador) false = usuario , true = administrador
 
-    protected String type;
-
-    public User(String[] args) {
+    public User(String[] args) {//constructor 
+        name = args[0]; 
     }
 
     public String getID() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return ID; 
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return name; 
     }
 
-    public String setName(String n) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
-    public String getType() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean getType() {
+        return type; 
     }
 }
