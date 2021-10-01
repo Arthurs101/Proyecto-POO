@@ -52,6 +52,7 @@ public class Inicio extends javax.swing.JFrame {
         Path = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         SendPath = new javax.swing.JButton();
+        Messenger = new javax.swing.JLabel();
 
         jLabel5.setText("jLabel5");
 
@@ -185,6 +186,8 @@ public class Inicio extends javax.swing.JFrame {
 
         SendPath.setText("enviar");
 
+        Messenger.setForeground(new java.awt.Color(102, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -192,6 +195,7 @@ public class Inicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Messenger)
                     .addComponent(SendPath)
                     .addComponent(Path, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -206,7 +210,9 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(Path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(SendPath)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Messenger)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Directorio", jPanel1);
@@ -279,6 +285,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel LOG;
     private javax.swing.JButton Login;
     private javax.swing.JLabel LoginWarner;
+    private javax.swing.JLabel Messenger;
     private javax.swing.JTextField Path;
     public javax.swing.JPanel REG;
     private javax.swing.JTextField RID;
@@ -303,7 +310,7 @@ public javax.swing.JButton Login(){//devuelve la clase del boton de inicio de se
     return Login; 
 }
 public String LoginData(){//devolver el valor de los campos presionados
-    return String.join(":", ID.getText(),name.getText());
+    return String.join(":", name.getText(),ID.getText());
 }
 public void Warning(String w){//mostrar el error u mensaje al usario en la gui
     LoginWarner.setText(w);
@@ -325,6 +332,15 @@ public String[] NewUser(){//devuelve el array con los datos del nuevo usuario
     data[1]= RID.getText();//obtener valor de su ID
     
     return data;
+}
+public String getPath(){//obtener el directorio
+    return Path.getText();
+}
+public javax.swing.JButton getSend(){//obtener la instancia del botón, le sirve al controlador
+    return SendPath; 
+}
+public void setMessenger(String a){//advertencia o mensaje en el apartado de enviar directorio
+    Messenger.setText(a);
 }
 }
 
