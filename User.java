@@ -1,5 +1,5 @@
 /*
-Es el Usuario común, solo puede consultar
+Clase referente al Usuario, almacena sus datos
 */
 
 public class User {
@@ -12,6 +12,8 @@ public class User {
 
     public User(String[] args) {//constructor 
         name = args[0]; 
+        ID = args[1];
+        type = Boolean.valueOf(args[2]);
     }
 
     public String getID() {
