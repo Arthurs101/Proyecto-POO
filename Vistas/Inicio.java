@@ -36,6 +36,8 @@ public class Inicio extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
         ID = new javax.swing.JTextField();
         LoginWarner = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         REG = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         Rname = new javax.swing.JTextField();
@@ -46,25 +48,31 @@ public class Inicio extends javax.swing.JFrame {
         Register = new javax.swing.JButton();
         Cleaner = new javax.swing.JButton();
         RWarning = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Path = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         SendPath = new javax.swing.JButton();
         Messenger = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LOG.setBackground(new java.awt.Color(255, 255, 255));
+        LOG.setBackground(new java.awt.Color(255, 251, 246));
+        LOG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Login.setBackground(new java.awt.Color(255, 255, 255));
-        Login.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        Login.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Login.setForeground(new java.awt.Color(51, 51, 51));
-        Login.setText("Inicio de Sesion");
+        Login.setText("Entrar");
+        Login.setToolTipText("");
+        LOG.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 100, 30));
 
         Clean.setBackground(new java.awt.Color(255, 255, 255));
-        Clean.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        Clean.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Clean.setForeground(new java.awt.Color(51, 51, 51));
         Clean.setText("Limpiar");
         Clean.addActionListener(new java.awt.event.ActionListener() {
@@ -72,98 +80,90 @@ public class Inicio extends javax.swing.JFrame {
                 CleanActionPerformed(evt);
             }
         });
+        LOG.add(Clean, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 100, 30));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel1.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Ingresar Nombre");
+        LOG.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel2.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Ingresar ID Personal");
+        LOG.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 210, -1, -1));
 
-        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.setBackground(new java.awt.Color(255, 251, 246));
+        name.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        name.setForeground(new java.awt.Color(51, 51, 51));
+        LOG.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 238, 30));
 
-        ID.setBackground(new java.awt.Color(255, 255, 255));
+        ID.setBackground(new java.awt.Color(255, 251, 246));
+        ID.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        ID.setForeground(new java.awt.Color(51, 51, 51));
+        LOG.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 238, 30));
 
+        LoginWarner.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
         LoginWarner.setForeground(new java.awt.Color(153, 0, 0));
-        LoginWarner.setText("yo soy el warning :v");
+        LOG.add(LoginWarner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 320, 20));
 
-        javax.swing.GroupLayout LOGLayout = new javax.swing.GroupLayout(LOG);
-        LOG.setLayout(LOGLayout);
-        LOGLayout.setHorizontalGroup(
-            LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LOGLayout.createSequentialGroup()
-                .addContainerGap(372, Short.MAX_VALUE)
-                .addGroup(LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LOGLayout.createSequentialGroup()
-                        .addComponent(LoginWarner)
-                        .addGap(124, 124, 124))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(LOGLayout.createSequentialGroup()
-                            .addComponent(Login)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(Clean, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LOGLayout.createSequentialGroup()
-                            .addGroup(LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(ID)
-                                .addComponent(jLabel1)
-                                .addComponent(jLabel2)
-                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(3, 3, 3))))
-                .addGap(41, 41, 41))
-        );
-        LOGLayout.setVerticalGroup(
-            LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ID, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(LOGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Login, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Clean, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(66, 66, 66)
-                .addComponent(LoginWarner)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Sesion2.png"))); // NOI18N
+        LOG.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 360, 530));
+
+        jLabel8.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel8.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 30)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Iniciar Sesión");
+        LOG.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
 
         jTabbedPane1.addTab("Inicio Sesion", LOG);
 
-        REG.setBackground(new java.awt.Color(255, 255, 255));
+        REG.setBackground(new java.awt.Color(255, 251, 246));
+        REG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel3.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Ingresar Nombre");
+        REG.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
-        Rname.setBackground(new java.awt.Color(255, 255, 255));
+        Rname.setBackground(new java.awt.Color(255, 251, 246));
         Rname.setForeground(new java.awt.Color(0, 0, 0));
+        REG.add(Rname, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 212, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel4.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Ingresar ID Personal");
+        REG.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, -1, -1));
 
-        RID.setBackground(new java.awt.Color(255, 255, 255));
+        RID.setBackground(new java.awt.Color(255, 251, 246));
         RID.setForeground(new java.awt.Color(0, 0, 0));
+        REG.add(RID, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 212, 30));
 
-        user.setBackground(new java.awt.Color(255, 255, 255));
+        user.setBackground(new java.awt.Color(255, 251, 246));
         tipoUsuarioRegistro.add(user);
+        user.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         user.setForeground(new java.awt.Color(51, 51, 51));
         user.setText("Empleado");
+        REG.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
 
+        admin.setBackground(new java.awt.Color(255, 251, 246));
         tipoUsuarioRegistro.add(admin);
+        admin.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         admin.setForeground(new java.awt.Color(51, 51, 51));
         admin.setText("Administrador");
+        REG.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
 
-        Register.setBackground(new java.awt.Color(255, 255, 255));
+        Register.setBackground(new java.awt.Color(255, 251, 246));
+        Register.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Register.setForeground(new java.awt.Color(51, 51, 51));
         Register.setText("Registrarse");
+        REG.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 107, 41));
 
-        Cleaner.setBackground(new java.awt.Color(255, 255, 255));
+        Cleaner.setBackground(new java.awt.Color(255, 251, 246));
+        Cleaner.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Cleaner.setForeground(new java.awt.Color(51, 51, 51));
         Cleaner.setText("Limpiar");
         Cleaner.addActionListener(new java.awt.event.ActionListener() {
@@ -171,103 +171,53 @@ public class Inicio extends javax.swing.JFrame {
                 CleanerActionPerformed(evt);
             }
         });
+        REG.add(Cleaner, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 87, 41));
 
+        RWarning.setFont(new java.awt.Font("Eras Light ITC", 1, 12)); // NOI18N
         RWarning.setForeground(new java.awt.Color(204, 0, 0));
-        RWarning.setText("yo soy el warning");
+        REG.add(RWarning, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, 160, 22));
 
-        javax.swing.GroupLayout REGLayout = new javax.swing.GroupLayout(REG);
-        REG.setLayout(REGLayout);
-        REGLayout.setHorizontalGroup(
-            REGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, REGLayout.createSequentialGroup()
-                .addContainerGap(374, Short.MAX_VALUE)
-                .addGroup(REGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RWarning, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(user)
-                    .addComponent(admin)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addGroup(REGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, REGLayout.createSequentialGroup()
-                            .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(Cleaner, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
-                        .addComponent(RID, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Rname, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addGap(68, 68, 68))
-        );
-        REGLayout.setVerticalGroup(
-            REGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(REGLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Rname, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(user)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(admin)
-                .addGap(15, 15, 15)
-                .addGroup(REGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Cleaner, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(Register, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(RWarning, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
-        );
+        jLabel9.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel9.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 30)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Registrar");
+        REG.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, -1, -1));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/registrar.png"))); // NOI18N
+        REG.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -10, 350, 540));
 
         jTabbedPane1.addTab("Registrarse", REG);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 251, 246));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Path.setBackground(new java.awt.Color(255, 255, 255));
+        Path.setBackground(new java.awt.Color(255, 251, 246));
+        Path.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Path.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 430, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabel6.setBackground(new java.awt.Color(255, 251, 246));
+        jLabel6.setFont(new java.awt.Font("Eras Light ITC", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Ingresar el Directorio Donde se Almacenan los datos");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
 
-        SendPath.setBackground(new java.awt.Color(255, 255, 255));
-        SendPath.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        SendPath.setBackground(new java.awt.Color(255, 251, 246));
+        SendPath.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         SendPath.setForeground(new java.awt.Color(51, 51, 51));
-        SendPath.setText("enviar");
+        SendPath.setText("Enviar");
+        SendPath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendPathActionPerformed(evt);
+            }
+        });
+        jPanel1.add(SendPath, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 90, 34));
 
         Messenger.setForeground(new java.awt.Color(102, 0, 0));
+        jPanel1.add(Messenger, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 212, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Path, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jLabel6))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(SendPath, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Messenger))
-                .addContainerGap(68, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(212, 212, 212)
-                .addComponent(Messenger)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Path, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SendPath, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
-        );
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/directory.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 100, 100));
 
         jTabbedPane1.addTab("Directorio", jPanel1);
 
@@ -298,6 +248,10 @@ public class Inicio extends javax.swing.JFrame {
         RID.setText("");
         Rname.setText("");
     }//GEN-LAST:event_CleanerActionPerformed
+
+    private void SendPathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendPathActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SendPathActionPerformed
 
     /**
      * @param args the command line arguments
@@ -351,11 +305,16 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton SendPath;
     private javax.swing.JRadioButton admin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField name;
