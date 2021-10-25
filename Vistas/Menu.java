@@ -46,9 +46,6 @@ public class Menu extends javax.swing.JFrame {
         Save = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         Input = new javax.swing.JTextArea();
-        jLabel8 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
         Admin = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -59,156 +56,228 @@ public class Menu extends javax.swing.JFrame {
         name = new javax.swing.JTextField();
         Path = new javax.swing.JTextField();
         Warner = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 251, 246));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel2.setFont(new java.awt.Font("Eras Light ITC", 1, 20)); // NOI18N
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Seleccionar Recurso:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 220, 30));
 
-        Selection.setBackground(new java.awt.Color(255, 251, 246));
-        Selection.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
-        Selection.setForeground(new java.awt.Color(51, 51, 51));
+        Selection.setBackground(new java.awt.Color(255, 255, 255));
         Selection.setToolTipText("");
-        jPanel1.add(Selection, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 210, 30));
 
-        Output.setBackground(new java.awt.Color(255, 251, 246));
+        Output.setBackground(new java.awt.Color(255, 255, 255));
         Output.setColumns(20);
-        Output.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
         Output.setForeground(new java.awt.Color(51, 51, 51));
         Output.setRows(5);
         jScrollPane4.setViewportView(Output);
 
-        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 300, 290));
-
-        jLabel6.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel6.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Contenido: ");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
 
-        Obtener.setBackground(new java.awt.Color(255, 251, 246));
-        Obtener.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        Obtener.setBackground(new java.awt.Color(255, 255, 255));
+        Obtener.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Obtener.setForeground(new java.awt.Color(51, 51, 51));
         Obtener.setText("Obtener");
-        jPanel1.add(Obtener, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 90, 30));
 
-        Refresh.setBackground(new java.awt.Color(255, 251, 246));
-        Refresh.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        Refresh.setBackground(new java.awt.Color(255, 255, 255));
+        Refresh.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Refresh.setForeground(new java.awt.Color(51, 51, 51));
         Refresh.setText("Refrescar");
-        Refresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RefreshActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 90, 30));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/recursos.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 380, 400));
+        jLabel7.setText("jLabel7");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6)
+                    .addComponent(Selection, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Obtener)
+                        .addGap(18, 18, 18)
+                        .addComponent(Refresh))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 308, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Obtener)
+                            .addComponent(Refresh))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(51, 51, 51))
+        );
 
         jTabbedPane1.addTab("Selección", jPanel1);
 
-        Recurso.setBackground(new java.awt.Color(255, 251, 246));
-        Recurso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Recurso.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Escribe la capacitación:");
-        Recurso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 190, -1));
 
         Save.setBackground(new java.awt.Color(255, 255, 255));
         Save.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Save.setForeground(new java.awt.Color(51, 51, 51));
-        Save.setText("Aceptar");
+        Save.setText("Guardar");
         Save.setToolTipText("");
-        Recurso.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 110, 40));
 
-        Input.setBackground(new java.awt.Color(255, 251, 246));
+        Input.setBackground(new java.awt.Color(255, 255, 255));
         Input.setColumns(20);
-        Input.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        Input.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Input.setForeground(new java.awt.Color(0, 0, 0));
         Input.setRows(5);
-        Input.setText("Escribir contenido aquí (por el momento no guarda el contenido) ");
+        Input.setText("escribe el contenido aquí (por el momento no guarda el contenido) ");
         jScrollPane3.setViewportView(Input);
 
-        Recurso.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 610, 190));
-
-        jLabel8.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel8.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 25)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Crear Capacitación:");
-        Recurso.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
-        Recurso.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 370, 10));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/capacitacion.png"))); // NOI18N
-        Recurso.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 440, 170));
+        javax.swing.GroupLayout RecursoLayout = new javax.swing.GroupLayout(Recurso);
+        Recurso.setLayout(RecursoLayout);
+        RecursoLayout.setHorizontalGroup(
+            RecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RecursoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(RecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(RecursoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, RecursoLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        RecursoLayout.setVerticalGroup(
+            RecursoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RecursoLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(Save, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
+        );
 
         jTabbedPane1.addTab("Recursos", Recurso);
 
-        Admin.setBackground(new java.awt.Color(255, 251, 246));
-        Admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Admin.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel3.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Directorio del Recurso:");
-        Admin.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, -1));
 
-        jLabel4.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel4.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Borrar Recurso:");
-        Admin.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 126, -1));
 
-        Load.setBackground(new java.awt.Color(255, 251, 246));
-        Load.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        Load.setBackground(new java.awt.Color(255, 255, 255));
+        Load.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Load.setForeground(new java.awt.Color(51, 51, 51));
         Load.setText("Cargar");
-        Admin.add(Load, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 98, 40));
 
-        Delete.setBackground(new java.awt.Color(255, 251, 246));
-        Delete.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        Delete.setBackground(new java.awt.Color(255, 255, 255));
+        Delete.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         Delete.setForeground(new java.awt.Color(51, 51, 51));
         Delete.setText("Borrar");
-        Admin.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 101, 40));
 
-        deleteB.setBackground(new java.awt.Color(255, 251, 246));
-        deleteB.setFont(new java.awt.Font("Eras Light ITC", 1, 14)); // NOI18N
+        deleteB.setBackground(new java.awt.Color(255, 255, 255));
+        deleteB.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         deleteB.setForeground(new java.awt.Color(102, 102, 102));
-        Admin.add(deleteB, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 303, 35));
 
-        jLabel5.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel5.setFont(new java.awt.Font("Eras Light ITC", 1, 16)); // NOI18N
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Nombre del Recurso:");
-        Admin.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 180, -1));
+        jLabel5.setText("Nombre del Recurso");
 
-        name.setBackground(new java.awt.Color(255, 251, 246));
+        name.setBackground(new java.awt.Color(255, 255, 255));
         name.setForeground(new java.awt.Color(0, 0, 0));
-        Admin.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 303, 30));
 
-        Path.setBackground(new java.awt.Color(255, 251, 246));
+        Path.setBackground(new java.awt.Color(255, 255, 255));
         Path.setForeground(new java.awt.Color(0, 0, 0));
-        Admin.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 303, 30));
-        Admin.add(Warner, new org.netbeans.lib.awtextra.AbsoluteConstraints(134, 200, -1, -1));
 
-        jLabel10.setBackground(new java.awt.Color(255, 251, 246));
-        jLabel10.setFont(new java.awt.Font("Microsoft JhengHei UI Light", 1, 25)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Administración:");
-        Admin.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/directorios.png"))); // NOI18N
+        jLabel8.setText("jLabel8");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/a.png"))); // NOI18N
-        Admin.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 330, 410));
+        javax.swing.GroupLayout AdminLayout = new javax.swing.GroupLayout(Admin);
+        Admin.setLayout(AdminLayout);
+        AdminLayout.setHorizontalGroup(
+            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(deleteB, 0, 303, Short.MAX_VALUE)
+                        .addComponent(Path)
+                        .addComponent(name)
+                        .addComponent(Load, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(AdminLayout.createSequentialGroup()
+                            .addGap(114, 114, 114)
+                            .addComponent(Warner))
+                        .addComponent(jLabel5)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 338, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
+        );
+        AdminLayout.setVerticalGroup(
+            AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(AdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AdminLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Path, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Load, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(Warner)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(deleteB, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104))))
+        );
 
         jTabbedPane1.addTab("Administración", Admin);
 
@@ -225,10 +294,6 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RefreshActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,8 +346,6 @@ public class Menu extends javax.swing.JFrame {
     public javax.swing.JLabel Warner;
     private javax.swing.JComboBox<String> deleteB;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -290,11 +353,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField name;
     // End of variables declaration//GEN-END:variables
