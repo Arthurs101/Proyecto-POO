@@ -3,10 +3,8 @@ Controlador, encargada de realizar la lógica y de comunicar la vista con el mod
 */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import Vistas.*;
 import java.io.FileReader;
-
+import Vistas.*; 
 public class Controller implements ActionListener {
     private Inicio l;
     private Database fb;
@@ -24,23 +22,21 @@ public class Controller implements ActionListener {
         if (e.getSource().equals(l.Login())) {//si se detecta el uso de boton de inicio de sesión, obtener los cambpos y mandarlos a la base de datos
             String data = l.LoginData();
             try{
-            if(fb.loginchecker(data)){//la base verifica si existe o no ese usuario
-                //si el usuario si está registrado
-                l.Warning("exito al inicio de sesión");
-                String[] d = fb.getUserData(data);//obtener información de usuario
-                if (d == null) {
-                    l.Warning("ERROR INESPERADO, INTENTE DE NUEVO");
-                }else {
-                    initMenu(); //iniciar la otra pestaña
+                if(fb.loginchecker(data)){//la base verifica si existe o no ese usuario
+                    //si el usuario si está registrado
+                    l.Warning("exito al inicio de sesión");
+                    l.setVisible(false);
+                    String[] d = fb.getUserData(data);//obtener información de usuario
+                    if (d == null) {
+                        l.Warning("ERROR INESPERADO, INTENTE DE NUEVO");
+                    }else {
+                        initMenu(); //iniciar la otra pestaña
+                    }
                 }
-                
-                
-               
-            }
-            else{
-                //si el usuario no existe
-                l.Warning("datos erroneos");
-            }
+                else{
+                    //si el usuario no existe
+                    l.Warning("datos erroneos");
+                }
             }
             catch(NullPointerException ne){//si no ha enviado el directorio
                     l.Warning("ENVIE EL DIRECTORIO EN LA PESTAÑA 'DIRECTORIO'");
@@ -53,6 +49,7 @@ public class Controller implements ActionListener {
             if(checkData(data)){//revisar array
                 l.RWarning("Registro exitoso");
                 fb.saveUserData(data);//registrar en la base el usuario
+                fb.UserRefresh();
             }else{
                 l.RWarning("DATOS INCOMPLETOS");//advertir de que faltan datos
                 }

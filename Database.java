@@ -7,8 +7,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Database {
 
@@ -18,11 +16,30 @@ public class Database {
     private String Path; //dirección donde se buscan los archivos
   
     
-    
+    public void UserRefresh(){//refrescar la kuista de Usuarios.
+        try {//obtener los Usuarios
+            BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
+            String line;  
+            while((line = bf.readLine()) != null){
+              String[] user = line.split(":");
+              String validate = String.join(":", user[0], user[1]);
+              Users.add(validate); 
+            }
+        } catch (FileNotFoundException e) {
+            try{
+            FileWriter fr = new FileWriter(Path + "Login.txt");
+            fr.close();
+            }catch(IOException io){
+                
+            }
+        }catch(IOException a){
+            
+        }
+    }
     
     
     public Database(String p){//requiere del directorio donde está el LoginData y el Paths
-        Path = p; 
+        this.Path = p; 
         try{
         BufferedReader bx = new BufferedReader(new FileReader (this.Path + "PATHS.txt"));
         String line;
@@ -41,7 +58,7 @@ public class Database {
             
         }
         
-        try {
+        try {//obtener los Usuarios
             BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
             String line;  
             while((line = bf.readLine()) != null){
