@@ -24,7 +24,6 @@ public class User {
         return name; 
     }
 
-
     public boolean getType() {
         return type; 
     }

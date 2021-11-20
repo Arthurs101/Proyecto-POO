@@ -1,174 +1,186 @@
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Database {
 
-    private ArrayList<String> Capacitaciones = new ArrayList<>();
-
-    private ArrayList<String> Users = new ArrayList<>() ;//este archivo posee todos los usuarios
+    private ArrayList<Capacitacion> Capacitaciones = new ArrayList<>();
+    private ArrayList<User> Users = new ArrayList<>() ;//este archivo posee todos los usuarios
     private String Path; //dirección donde se buscan los archivos
-  
-    
-    public void UserRefresh(){//refrescar la kuista de Usuarios.
-        try {//obtener los Usuarios
-            BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
-            String line;  
-            while((line = bf.readLine()) != null){
-              String[] user = line.split(":");
-              String validate = String.join(":", user[0], user[1]);
-              Users.add(validate); 
-            }
-        } catch (FileNotFoundException e) {
-            try{
-            FileWriter fr = new FileWriter(Path + "Login.txt");
-            fr.close();
-            }catch(IOException io){
-                
-            }
-        }catch(IOException a){
-            
-        }
+
+    public Database(String Path) {
+        this.Path = Path;
+        this.Capacitaciones = read();
+        users();
     }
-    
-    
-    public Database(String p){//requiere del directorio donde está el LoginData y el Paths
-        this.Path = p; 
+    private ArrayList<Capacitacion> read(){
+        ArrayList<Capacitacion> programs = new ArrayList<>();
         try{
-        BufferedReader bx = new BufferedReader(new FileReader (this.Path + "PATHS.txt"));
-        String line;
-            while ((line = bx.readLine()) != null){//obtener el nombre de los materiales disponibles
-                String[] linex = line.split("@");//separar el nombre y la dirección
-                Capacitaciones.add(linex[0]); 
-            }
-        } catch(FileNotFoundException x){//crear el Archivo en blanco
-            try{
-            FileWriter fr = new FileWriter(Path + "PATHS.txt");
-            fr.close();
-            }catch(IOException io){
-                
-            }
-        }catch(IOException I){
-            
-        }
-        
-        try {//obtener los Usuarios
-            BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
-            String line;  
-            while((line = bf.readLine()) != null){
-              String[] user = line.split(":");
-              String validate = String.join(":", user[0], user[1]);
-              Users.add(validate); 
-            }
-        } catch (FileNotFoundException e) {
-            try{
-            FileWriter fr = new FileWriter(Path + "Login.txt");
-            fr.close();
-            }catch(IOException io){
-                
-            }
-        }catch(IOException a){
-            
-        }
-        
-    }
-    
-    
-    public FileReader getCapacitacion(String name) {//obtiene el archivo de la capacitacion
-            FileReader read = null;     
-            //archivo contiene Nombre@Directorio
-        try {
-            BufferedReader bx = new BufferedReader(new FileReader (this.Path + "PATHS.txt"));
-            String line;
-            while ((line = bx.readLine()) != null){
-                String[] linex = line.split("@");//separar el nombre y la dirección
-                if(name.equals(linex[0])){
-                    read = new FileReader(linex[1] + linex[0]);
-                    break; 
+                JSONParser Stored = new JSONParser();//lector del arvhivo JSON
+                JSONArray json = (JSONArray) Stored.parse(new FileReader(Path + "CORE.json"));//contenido del archivo JSON
+            for(Object c: json ){
+                JSONObject program = (JSONObject) c;
+                switch((String) program.get("type")){//crear la capcacitación según el tipo
+                    case "web" ->{
+                        Capacitacion web = new WEB((String) program.get("name"), (String) program.get("author"),  (String) program.get("fecha"), (String) program.get("content"));
+                        programs.add(web);
+                    }
+                    case "text" ->{
+                        Capacitacion txt = new TEXT((String) program.get("name"), (String) program.get("author"), (String) program.get("fecha"),(String) program.get("content"));
+                        programs.add(txt);
+                    }
                 }
             }
-            
-            
-        } catch (Exception e) {//en dado caso no encuentre el archivo
+        } 
+        catch (FileNotFoundException e) {
+            try{
+                FileWriter fr = new FileWriter(Path + "CORE.json");
+                fr.write("[");
+                fr.write("]");
+                fr.close();
+                programs = null;
+            } catch (IOException ex) {
+                
+            }
             
         }
-        return read; 
+        catch (IOException e){
+            
+        } catch (ParseException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }catch (Exception e){
+            
+        }
+        return programs; 
     }
-
-    public boolean saveCapacitacion(String[] a) {//guardar el directorio del material tipo TXT a agregar
-        boolean saved = false; 
-        try {
-            File record = new File(Path + "PATHS.txt");
-            FileWriter rw = new FileWriter(record,true);
-            BufferedWriter br = new BufferedWriter(rw);
-            br.write(a[0]+ "@" + a[1] +"\n");  //Nombre@Directorio 
-            br.close();
-            saved = true; 
-        } catch (Exception e) {
-            
-        }
-        return saved;
-    }
-
-    public boolean loginchecker(String d) {
-        //el string recibido es Nombre:ID, entonces que revise en el acrvhivo si está o no ese ID y nombre
-        //Nombre:ID:tipo con todos los usuarios los tipos usuario y administrador
-        boolean exists = false;
-        if (Users.contains(d)) {
-            exists = true; 
-        }
-        return exists; 
+    
+    private void users(){//leer usaurios y si no hay archivo de usuarios crearlo
         
-    }
-
-    public String[] getUserData(String a) {//obtener la información del usuario
-        String[] data = null;
-        try {
-        //obtener información del usuario
-        BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
-        String line;
-         while((line = bf.readLine()) != null){
+         try {//obtener los Usuarios
+            BufferedReader bf = new BufferedReader(new FileReader (Path + "Login.txt"));
+            String line;  
+            while((line = bf.readLine()) != null){
               String[] user = line.split(":");
-              String validate = String.join(":", user[0], user[1]);
-              if(a.equals(validate)){
-                  data = user;
-                  break;
-              }
-        
+              User u = new User(user);
+              this.Users.add(u); 
+            }
+        } catch (FileNotFoundException e) {
+            try{
+            FileWriter fr = new FileWriter(Path + "Login.txt");
+            fr.close();
+            }catch(IOException io){
+                
+            }
+        }catch(IOException a){
+            
         }
-    } catch (FileNotFoundException ex) {
-           data = null;
-        }
-    catch(IOException x){
-            data = null;
-        }
-       return data; 
     }
-    
 
-    public boolean saveUserData(String[] data ){//guardar nuevo usuario
-        boolean saved = true;
-        try {
-            File record = new File(Path + "Login.txt");
-            FileWriter rw = new FileWriter(record,true);
-            BufferedWriter br = new BufferedWriter(rw);
-            br.write(String.join(":", data[0] , data[1] , String.valueOf(data[2])) +"\n"); 
-            br.close();
-        } catch (Exception e) {
-            saved = false;
-        }
-        return saved; 
-    }
-    
-    public ArrayList<String> getCapacitaciones(){
+    public ArrayList<Capacitacion> getCapacitaciones() {
         return Capacitaciones;
     }
+  
+    public User Login(String name, String ID){
+        User user = null;
+        for(User c: this.Users){
+            if(c.getName().equals(name) && c.getID().equals(ID)){
+                user = c;
+            }
+        }
+        return user;
+    }
     
+    public void addCapacitacione(Capacitacion c){
+        Capacitaciones.add(c);
+        Save(); 
+    }
+    public Capacitacion capacitacion(String name){
+        Capacitacion search = null;
+        for(Capacitacion c: Capacitaciones){
+            if(c.getName().equals(name)){
+                search = c;
+            }
+        }
+        return search;
+    }
+    
+    public void addUser(User u){
+        Users.add(u);
+        SaveUser();
+    }
+    
+    public void deleteprogram(String name){//eliminar alguna capacitacion
+        for (int i = 0; i < Capacitaciones.size() -1 ; i++) {
+            System.out.println(Capacitaciones.get(i).getName());
+            if(Capacitaciones.get(i).getName().equals(name)){
+                Capacitaciones.remove(i);
+                i--;
+            }
+        }
+        Save();
+        this.Capacitaciones = read();
+    }
+    private void SaveUser(){//guardar el archivo
+        
+        try {
+            FileWriter fr = new FileWriter(Path + "Login.txt");
+            for(User u: Users){
+                String data = String.join(":", u.getName(), u.getID(), String.valueOf(u.getType()) );
+                fr.write(data);
+            
+            }
+            fr.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private void Save(){//guardar en el archivo las capacitaciones
+        JSONArray save = new JSONArray();
+        for(Capacitacion c: Capacitaciones){
+            JSONObject program = new JSONObject();
+            program.put("name", c.getName());
+            program.put("fecha", c.getFecha());
+            program.put("author", c.getAuthor());
+            program.put("content", c.getContent());
+            if(c.getClass().equals(WEB.class)){
+                program.put("type", "web");
+            }else{
+                program.put("type", "text");
+            }
+            save.add(program);
+            try{FileWriter JSON = new FileWriter(Path+ "CORE.json");
+            JSON.write("[");
+            for(Object d: save){
+                JSONObject program_save = (JSONObject) d;
+                JSON.write(program_save.toString() + "\n");
+            }
+            JSON.write("]");
+            JSON.flush();
+            
+            } catch (IOException ex) {
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+  public ArrayList<String> getCapacitacionesNames(){
+      ArrayList<String> names = new ArrayList<>();
+      if(!Capacitaciones.isEmpty()){
+            for(Capacitacion c: Capacitaciones){
+                names.add(c.getName());
+            }
+      }
+      return names;
+  }
+    
+
     
 }
